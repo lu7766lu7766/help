@@ -3,44 +3,50 @@ var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
-   entry: {
-	   main:'./src/main.js',
-	   main2:'./src/main2.js',
-	   vendor:['jquery', 'bootstrap','bootstrap/dist/css/bootstrap.css'],
+	entry: {
+		main: './src/main.js',
+		main2: './src/main2.js',
+		vendor: ['jquery',
+			'bootstrap',
+			'bootstrap/dist/css/bootstrap.css',
+			'css/2-col-portfolio.css',
+			'css/font-awesome.min.css',
+			'js/googlemap.js',
+			'js/markerclusterer.js'],
 
-	   /* <script src="vendor.js"></script>ºô­¶¤¤³o¼Ë§Y¥i¶×¤J*/
+		/* <script src="vendor.js"></script>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½oï¿½Ë§Yï¿½iï¿½×¤J*/
 	},
-   output: {
-      path:"src",
-      filename: '[name].min.js'
-   },
-   module: {
-     loaders: [
-       { test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel?presets[]=es2015' },
-       { test: /\.css$/, loader: 'style-loader!css-loader' },
-       { test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
-       { test: /\.(woff|woff2)$/, loader:"url?prefix=font/&limit=5000" },
-       { test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
-       { test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
-     ]
-   },
-   resolve: {
-     // ³]©w«á¥u»Ý­n¼g require('file') ¦Ó¤£¥Î¼g¦¨ require('file.jsx')
-     extensions: ['', '.js', 'jsx', '.json'] 
-   },
-   plugins: [
-     new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'vendor.js'),
-     new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-        'root.jQuery': 'jquery'
-    }),
-     new ExtractTextPlugin('app.bundle.css'),
-	 new uglifyJsPlugin({
-      compress: {
-        warnings: false
-      }
-    })
-   ]
+	output: {
+		path: "src",
+		filename: '[name].min.js'
+	},
+	module: {
+		loaders: [
+			{ test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel?presets[]=es2015' },
+			{ test: /\.css$/, loader: 'style-loader!css-loader' },
+			{ test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
+			{ test: /\.(woff|woff2)$/, loader: "url?prefix=font/&limit=5000" },
+			{ test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
+			{ test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
+		]
+	},
+	resolve: {
+		// ï¿½]ï¿½wï¿½ï¿½ï¿½uï¿½Ý­nï¿½g require('file') ï¿½Ó¤ï¿½ï¿½Î¼gï¿½ï¿½ require('file.jsx')
+		extensions: ['', '.js', 'jsx', '.json']
+	},
+	plugins: [
+		new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'vendor.js'),
+		new webpack.ProvidePlugin({
+			$: 'jquery',
+			jQuery: 'jquery',
+			'window.jQuery': 'jquery',
+			'root.jQuery': 'jquery'
+		}),
+		new ExtractTextPlugin('app.bundle.css'),
+		new uglifyJsPlugin({
+			compress: {
+				warnings: false
+			}
+		})
+	]
 };
