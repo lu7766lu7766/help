@@ -1,6 +1,8 @@
 var webpack = require('webpack');
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+// var path = require("path");
+// console.log(path.resolve(__dirname, "build"));
 
 module.exports = {
 	entry: {
@@ -9,11 +11,10 @@ module.exports = {
 		vendor: ['jquery',
 			'bootstrap',
 			'bootstrap/dist/css/bootstrap.css',
-			'css/2-col-portfolio.css',
-			'css/font-awesome.min.css',
-			'js/googlemap.js',
-			'js/markerclusterer.js'],
-
+			'./css/2-col-portfolio.css',
+			'./css/font-awesome.min.css',
+			'./js/googlemap.js',
+			'./js/markerclusterer.js'],
 		/* <script src="vendor.js"></script>�������o�˧Y�i�פJ*/
 	},
 	output: {

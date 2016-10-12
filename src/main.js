@@ -1,4 +1,4 @@
-import 'Custom.css';
+import '../css/Custom.css';
 
 console.log("a");
 var a = 
@@ -10,5 +10,5 @@ var a =
 
 $(document).ready(function(){
 	console.log(a);
-	$("body").html(a);
+	//$("body").html(a);
 })
