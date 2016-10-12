@@ -3,21 +3,25 @@
 
 <head>
 
-    <!-- google map -->
+	<!-- google map -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd8CIfC7a5QepYroYyRMwYxPSRx1sd9yA"></script>
-    <script src="src/vendor.js"></script>
-    <script src="src/main.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd8CIfC7a5QepYroYyRMwYxPSRx1sd9yA"></script>
+	<script src="src/vendor.js"></script>
+	<script src="src/main.min.js"></script>
 
 </head>
 
 <body>
-<div class="container">
-	<div class="row">
-		<div class="col-md-6">123</div>
-		<div class="col-md-6">456</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6">123</div>
+			<div class="col-md-6">456</div>
+		</div>
+		<div id="my_view">
+			<button v-on:click="test">Test</button>
+			<span v-html="a"></span>
+		</div>
 	</div>
-</div>
 </body>
 
 </html>

@@ -7,7 +7,6 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
 	entry: {
 		main: './src/main.js',
-		main2: './src/main2.js',
 		vendor: ['jquery',
 			'bootstrap',
 			'bootstrap/dist/css/bootstrap.css',
@@ -33,7 +32,10 @@ module.exports = {
 	},
 	resolve: {
 		// �]�w���u�ݭn�g require('file') �Ӥ��μg�� require('file.jsx')
-		extensions: ['', '.js', 'jsx', '.json']
+		extensions: ['', '.js', 'jsx', '.json'],
+		alias: {
+			vue: 'vue/dist/vue.js'
+		}
 	},
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'vendor.js'),
