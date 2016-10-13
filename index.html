@@ -8,24 +8,26 @@
 	<script src="src/vendor.js"></script>
 	<script src="src/main.min.js"></script>
 
-</head>
+</head> 
 
 <body>
 	
 	<div id="container" class="container">
 		
-		<div v-route></div>
-		
-		<header-app :msg="a"></header-app>
-		<script src="src/main.min.js"></script>
-		<div id="header-jq"></div>
+		<router-link to="/foo">Go to Foo</router-link>
+        <router-link to="/bar">Go to Bar</router-link>
+        <router-link to="/user/bar">Go to User</router-link>
+
+		<router-view></router-view>
+        routeVuew end
+		<!--<header-app :msg="a"></header-app>-->
 		<div class="row">
 			<div class="col-md-6">123</div>
 			<div class="col-md-6">456</div>
 		</div>
 		<div id="my_view">
-			<button v-on:click="test">Test</button>
-			<span v-html="a"></span>
+			<!--<button v-on:click="test">Test</button>-->
+			<!--<span v-html="a"></span>-->
 		</div>
 	</div>
 </body>
