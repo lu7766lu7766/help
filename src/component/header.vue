@@ -1,16 +1,27 @@
 <template lang="html">
   <div>
     <div class="header">
-      {{ message }}
+      {{ message }} - {{msg}}
     </div>
+    <input type="button" value="ya" @click="chgMsg" />
   </div>
 </template>
 
 <script>
+import Bus from '../bus.js';
+
 export default {
+  props:['msg'],
   data () {
     return {
-      message: "Helo, I'm header add by vue!!"
+      message: 0
+    }
+  },
+  methods:{
+    chgMsg:function(){
+      //this.msg = "999";
+      this.message++;
+      Bus.$emit('chg',this);
     }
   }
 }

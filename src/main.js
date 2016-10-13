@@ -3,6 +3,8 @@ import Vue from 'vue';
 import VueResource from 'vue-resource';
 import HeaderApp from './component/header';
 
+import Bus from './bus';
+
 
 
 $(document).ready(function () {
@@ -13,12 +15,15 @@ $(document).ready(function () {
 Vue.config.degub = false;
 window.onload = function () {
 	Vue.use(VueResource);
-	var myViewModel = new Vue({
+	var vm = new Vue({
 		el: '#container',
 		data: { a: "456" },
-		components:{ HeaderApp },
+		components:{ 
+			HeaderApp
+		},
 		methods: {
 			test: function () {
+				this.a = "898";
 				this.$http.post("app.55104.com.tw:8080/library/android_connect_db.php",{
 					table:"getNews4Cell"
 				}).then(
@@ -28,6 +33,12 @@ window.onload = function () {
 						console.log(error);
 				});
 			}
+		},
+		created: function () {
+			Bus.$on('chg', function (child) {
+				vm.a = "888";
+				console.log(child)
+			})
 		}
 	});
 }
