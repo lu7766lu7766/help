@@ -1,9 +1,8 @@
 /node_modules
-
-/src/vendor.js
-/src/*.min.js
 /src/*.ttf
 /src/*.svg
 /src/*.eot
 /src/*.woff
 /src/*.woff2
+/src/*min.js
+/src/vendor.js
