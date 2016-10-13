@@ -10,6 +10,7 @@
     "server": "webpack-dev-server --devtool eval --progress --colors --port 3000",
     "start": "concurrently  \"npm run webpack\" \"npm run server\""
   },
+  "repository":"https://github.com/lu7766lu7766/help.git",
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -21,9 +22,12 @@
     "babel-runtime": "^6.11.6",
     "concurrently": "^3.1.0",
     "css-loader": "^0.25.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "exports-loader": "^0.6.3",
+    "imports-loader": "^0.6.5",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
-    "gulp": "^3.9.1",
     "html-loader": "^0.4.4",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
@@ -31,20 +35,14 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
-    "@types/jquery": "^2.0.33",
-    "babel-runtime": "^6.11.6",
     "bootstrap": "^3.3.7",
-    "bootstrap-webpack": "0.0.5",
-    "exports-loader": "^0.6.3",
-    "imports-loader": "^0.6.5",
     "jquery": "^3.1.1",
-    "less": "^2.7.1",
-    "less-loader": "^2.2.3",
     "lodash": "^4.16.4",
-    "typescript": "^2.0.3",
     "vue": "^2.0.2",
     "vue-html-loader": "^1.2.3",
     "vue-loader": "^9.7.0",
-    "vue-resource": "^1.0.3"
+    "vue-resource": "^1.0.3",
+    "vue-route": "^1.5.1",
+    "vuex": "^2.0.0"
   }
 }

@@ -8,7 +8,7 @@ import HeaderApp from './component/header';
 $(document).ready(function () {
 	//console.log(a);
 	//最終會是index執行，所以預設目錄會是跟目錄，要注意
-	$("#header-jq").load("layout/header.html");
+	//$("#header-jq").load("layout/header.html");
 })
 Vue.config.degub = false;
 window.onload = function () {
@@ -27,10 +27,6 @@ window.onload = function () {
 					},error=>{
 						console.log(error);
 				});
-				//this.a = a;
-				// console.log(this.a);
-				// console.log(a);
-				// console.log(window.a)
 			}
 		}
 	});
