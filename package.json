@@ -10,7 +10,7 @@
     "server": "webpack-dev-server --devtool eval --progress --colors --port 3000",
     "start": "concurrently  \"npm run webpack\" \"npm run server\""
   },
-  "repository":"https://github.com/lu7766lu7766/help.git",
+  "repository": "https://github.com/lu7766lu7766/help.git",
   "author": "",
   "license": "ISC",
   "devDependencies": {
