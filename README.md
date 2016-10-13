@@ -2,22 +2,30 @@
 
 How to start project?
 
-step1:
+##step1:
 npm install 
 
-step2
+
+##step2
 npm i webpack -g
 
-step3:
+
+##step3:
 npm start
 
-step4: open your.html and include
-# [<script src="src/vendor.js"></script>]
-# [<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd8CIfC7a5QepYroYyRMwYxPSRx1sd9yA"></script>]
-# [<script src="src/ThisPageJS.min.js"></script>]
-# [<script> //write jquery here </script>]
 
-step5: open browser
+##step4: 
+open your.html and include like [test.html](https://github.com/lu7766lu7766/help/blob/master/test.html)
+```html
+<script src="src/vendor.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd8CIfC7a5QepYroYyRMwYxPSRx1sd9yA"></script>
+<script src="src/ThisPageJS.min.js"></script>
+<script> //write jquery here </script>
+```
+
+
+##step5: 
+open browser
 http://127.0.0.1:3000
 
 
@@ -27,15 +35,17 @@ http://127.0.0.1:3000
 在工作區域不顯示不需要編輯的檔案
 在 VS Code 按 ctrl + shift + p 打開指令視窗
 輸入 Workspace Settings 編輯工作區組態設定，輸入
-	"files.exclude": {
-		"**/.git": true,
-		"**/.svn": true,
-		"**/.DS_Store": true,
-		"**/*.ttf":true,
-		"**/*.eot":true,
-		"**/*.woff":true,
-		"**/*.woff2":true,
-		"**/*.svg":true,
-		"**/*.min.js":true
-	}
+```html
+"files.exclude": {
+	"**/.git": true,
+	"**/.svn": true,
+	"**/.DS_Store": true,
+	"**/*.ttf":true,
+	"**/*.eot":true,
+	"**/*.woff":true,
+	"**/*.woff2":true,
+	"**/*.svg":true,
+	"**/*.min.js":true
+}
+```
 你頓時感覺清爽許多~~
