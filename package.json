@@ -38,6 +38,7 @@
     "less-loader": "^2.2.3",
     "lodash": "^4.16.4",
     "typescript": "^2.0.3",
-    "vue": "^2.0.2"
+    "vue": "^2.0.2",
+    "vue-resource": "^1.0.3"
   }
 }

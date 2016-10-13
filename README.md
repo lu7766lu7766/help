@@ -12,15 +12,16 @@ step3:
 npm start
 
 step4: open your.html and include
-<script src="src/vendor.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd8CIfC7a5QepYroYyRMwYxPSRx1sd9yA"></script>
-<script src="src/ThisPageJS.min.js"></script>
+# <script src="src/vendor.js"></script>
+# <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd8CIfC7a5QepYroYyRMwYxPSRx1sd9yA"></script>
+# <script src="src/ThisPageJS.min.js"></script>
+# <script> //write jquery here </script>
 
 step5: open browser
 http://127.0.0.1:3000
 
 
-如果有下npm start指令，在src資料夾中編輯*.js會自動產生*.min.js並且會把所有import自動塞進去，只需要引入這個檔案即可，就是step4的TThisPageJS.min.js
+如果有下npm start指令，在src資料夾中編輯*.js會自動產生*.min.js並且會把所有import自動塞進去，只需要引入這個檔案即可，就是step4的ThisPageJS.min.js
 
 
 在工作區域不顯示不需要編輯的檔案
