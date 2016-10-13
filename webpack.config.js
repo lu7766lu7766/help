@@ -22,7 +22,8 @@ module.exports = {
 	},
 	module: {
 		loaders: [
-			{ test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel?presets[]=es2015' },
+			{ test: /\.vue$/, loader: 'vue' },
+			{ test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel' },
 			{ test: /\.css$/, loader: 'style-loader!css-loader' },
 			{ test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
 			{ test: /\.(woff|woff2)$/, loader: "url?prefix=font/&limit=5000" },
@@ -30,9 +31,19 @@ module.exports = {
 			{ test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=image/svg+xml" }
 		]
 	},
+	 vue: {
+        loaders: {
+			js: 'babel',
+            css: 'style!css',
+        }
+    },
+	babel: {
+        presets: ['es2015'],
+        plugins: ['transform-runtime']
+    },
 	resolve: {
 		// �]�w���u�ݭn�g require('file') �Ӥ��μg�� require('file.jsx')
-		extensions: ['', '.js', 'jsx', '.json'],
+		extensions: ['', '.js', '.vue', 'jsx', '.json'],
 		alias: {
 			vue: 'vue/dist/vue.js'
 		}
