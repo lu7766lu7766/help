@@ -12,10 +12,10 @@ step3:
 npm start
 
 step4: open your.html and include
-# <script src="src/vendor.js"></script>
-# <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd8CIfC7a5QepYroYyRMwYxPSRx1sd9yA"></script>
-# <script src="src/ThisPageJS.min.js"></script>
-# <script> //write jquery here </script>
+# [<script src="src/vendor.js"></script>]
+# [<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd8CIfC7a5QepYroYyRMwYxPSRx1sd9yA"></script>]
+# [<script src="src/ThisPageJS.min.js"></script>]
+# [<script> //write jquery here </script>]
 
 step5: open browser
 http://127.0.0.1:3000
