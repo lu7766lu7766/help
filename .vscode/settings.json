@@ -10,6 +10,7 @@
 		"**/*.woff2":true,
 		"**/*.svg":true,
 		"**/*.min.js":true,
+		"src/vendor.js":true,
 		"LICENSE":true
 	}
 }
