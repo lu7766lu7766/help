@@ -1,85 +1,67 @@
 import '../css/Custom.css';
 import Vue from 'vue';
 import VueResource from 'vue-resource';
-import HeaderApp from './component/header';
-import FooterApp from './component/footer';
 
 import VueRouter from 'vue-router';
+import router from './router';
+
+import Vuex from 'vuex';
+import store from './store';
+
+//mapActions 功能類似mapState
 
 import Bus from './bus';
 
+import HeaderApp from './component/header';
+import FooterApp from './component/footer';
 
 
-$(document).ready(function () {
-	//console.log(a);
-	//最終會是index執行，所以預設目錄會是跟目錄，要注意
-	//$("#header-jq").load("layout/header.html");
-})
 
-const Foo = { template: '<transition name="slide-fade"><div>foo</div></transition>' }
-const Bar = { template: '<div>bar</div>' }
-const User = {
-	template: `
-    <div class="user">
-    	<router-link to="/user/bar/profile">Go to profile</router-link>
-    	<router-link to="/user/bar/posts">Go to posts</router-link>
-      	<h2>User {{ $route.params.id }}</h2>
-      	<router-view></router-view>
-    </div>
-  `
-}
+// $(document).ready(function () {
+// 	//console.log(a);
+// 	//最終會是index執行，所以預設目錄會是跟目錄，要注意
+// 	//$("#header-jq").load("layout/header.html");
+// })
 
-const routes = [
-	{ path: '/foo', component: Foo },
-	{ path: '/bar', component: Bar },
-	{
-		path: '/user/:id', 
-		//component:User,
-		components: {
-			default:User,
-			a: { template: '<div>a??</div>' }
-		},
-		children: [
-			{
-				// 当 /user/:id/profile 匹配成功，
-				// UserProfile 会被渲染在 User 的 <router-view> 中
-				path: 'profile',
-				component: { template: '<div>profile</div>' }
-			},
-			{
-				// 当 /user/:id/posts 匹配成功
-				// UserPosts 会被渲染在 User 的 <router-view> 中
-				path: 'posts',
-				component: { template: '<div>posts</div>' }
-			}
-		]
-    }
-]
 
-const router = new VueRouter({
-	routes // （缩写）相当于 routes: routes
-})
 
-Vue.config.degub = false;
+Vue.use(VueRouter);
+
+
+Vue.config.debug = false;
+
 window.onload = function () {
-	Vue.use(VueRouter);
 
 	const app = new Vue({
 		el: '#container',
-		data: { a: "456",go:0 },
+		data: { a: "456", go: 0 },
 		components: {
 			HeaderApp, FooterApp
 		},
 		router,
-		methods:{
-			routerTo:function(target){
+		store,
+		methods: {
+			routerTo: function (target) {
 				router.push(target);
 			},
-			routerGo:function(target){
+			routerGo: function (target) {
 				router.go(target);
+			},
+			add: function () {
+				//store.commit('increment');
+				store.dispatch({
+					type: 'incrementAsync',
+					amount: 10
+				});
+			}
+		},
+		computed: {
+			count() {
+				return store.state.count
 			}
 		}
 	});//.$mount('#container')
+	
 	// Vue.use(VueResource);
 	// var vm = new Vue({
 	// 	el: '#container',

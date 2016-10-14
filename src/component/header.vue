@@ -1,7 +1,7 @@
 <template lang="html">
   <div>
     <div class="header">
-      {{ message }} - {{msg}}
+      {{ message }} - {{msg}} - {{count}}
       I'm Header Hi~~~
     </div>
     <input type="button" value="ya" @click="chgMsg" />
@@ -24,7 +24,11 @@ export default {
       Bus.$emit('chg',this);
     }
   },
-  
+  computed: {
+		count () {
+			return this.$store.state.count
+		}
+	} 
 }
 </script>
 

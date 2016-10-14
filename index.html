@@ -36,7 +36,7 @@
 			<router-view name="a"></router-view>
 		</transition>
 		
-        routeVuew end
+        routeVue end{{count}}<br><br>
 		<div class="container">
 			<!--<header-app :msg="a"></header-app>-->
 			<div class="row">
@@ -51,6 +51,7 @@
 		<input type="button" @click="routerTo('/user/bar/profile')" value="Profile">
 		<input type="text" v-model="go" />
 		<input type="button" @click="routerGo(go)" value="Back">
+		<input type="button" @click="add" value="Add">
 		<footer-app></footer-app>
 	</div>
 </body>
