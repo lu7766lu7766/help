@@ -2,6 +2,7 @@
   <div>
     <div class="header">
       {{ message }} - {{msg}}
+      I'm Header Hi~~~
     </div>
     <input type="button" value="ya" @click="chgMsg" />
   </div>
@@ -9,12 +10,11 @@
 
 <script>
 import Bus from '../bus.js';
-
 export default {
   props:['msg'],
   data () {
     return {
-      message: 0
+      message: 0,
     }
   },
   methods:{
@@ -23,13 +23,15 @@ export default {
       this.message++;
       Bus.$emit('chg',this);
     }
-  }
+  },
+  
 }
 </script>
 
 <style lang="css">
 .header {
-  color: pink;
-  font-size: 1.4em;
+    background-color:black;
+    color: pink;
+    font-size: 1.4em;
 }
 </style>
