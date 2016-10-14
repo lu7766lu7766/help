@@ -15,18 +15,11 @@ import Bus from './bus';
 import HeaderApp from './component/header';
 import FooterApp from './component/footer';
 
-
-
 // $(document).ready(function () {
 // 	//console.log(a);
 // 	//最終會是index執行，所以預設目錄會是跟目錄，要注意
 // 	//$("#header-jq").load("layout/header.html");
 // })
-
-
-
-Vue.use(VueRouter);
-
 
 Vue.config.debug = false;
 
