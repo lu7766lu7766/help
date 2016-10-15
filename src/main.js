@@ -50,7 +50,7 @@ window.onload = function () {
 		},
 		computed: {
 			count() {
-				return store.state.count
+				return store.state.a.count
 			}
 		}
 	});//.$mount('#container')
