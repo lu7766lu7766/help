@@ -1,4 +1,5 @@
-import '../css/Custom.css';
+//import '../css/Custom.css';
+
 import Vue from 'vue';
 import VueResource from 'vue-resource';
 

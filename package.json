@@ -6,8 +6,7 @@
   "scripts": {
     "tsc": "tsc -w",
     "webpack": "webpack -w",
-    "gulp": "gulp",
-    "server": "webpack-dev-server --devtool eval --progress --colors --port 3000",
+    "server": "webpack-dev-server --line --hot --devtool eval --progress --colors --port 3000",
     "start": "concurrently  \"npm run webpack\" \"npm run server\""
   },
   "repository": "https://github.com/lu7766lu7766/help.git",

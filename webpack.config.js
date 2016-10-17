@@ -1,6 +1,5 @@
 var webpack = require('webpack');
-var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ETP = require("extract-text-webpack-plugin");
 // var path = require("path");
 // console.log(path.resolve(__dirname, "build"));
 
@@ -25,7 +24,7 @@ module.exports = {
 		loaders: [
 			{ test: /\.vue$/, loader: 'vue' },
 			{ test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel' },
-			{ test: /\.css$/, loader: 'style-loader!css-loader' },
+			{ test: /\.css$/, loader: ETP.extract({fallbackLoader:"style-loader", loader:"css-loader"}) },
 			{ test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
 			{ test: /\.(woff|woff2)$/, loader: "url?prefix=font/&limit=5000" },
 			{ test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
@@ -49,6 +48,7 @@ module.exports = {
 			vue: 'vue/dist/vue.js'
 		}
 	},
+	devServer: { inline:true, hot:true},
 	plugins: [
 		new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'vendor.js'),
 		new webpack.ProvidePlugin({
@@ -57,11 +57,11 @@ module.exports = {
 			'window.jQuery': 'jquery',
 			'root.jQuery': 'jquery'
 		}),
-		new ExtractTextPlugin('app.bundle.css'),
-		new uglifyJsPlugin({
+		new webpack.optimize.UglifyJsPlugin({
 			compress: {
 				warnings: false
 			}
-		})
+		}),
+		new ETP('bundle.css')
 	]
 };
