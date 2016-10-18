@@ -1,4 +1,5 @@
-//import '../css/Custom.css';
+import '../css/Custom.css';
+import "bootstrap/dist/css/bootstrap.css";//最後會一起產出bundle.css
 
 import Vue from 'vue';
 import VueResource from 'vue-resource';

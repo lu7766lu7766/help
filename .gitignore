@@ -6,3 +6,4 @@
 /src/*.woff2
 /src/*min.js
 /src/vendor.js
+/src/bundle.css

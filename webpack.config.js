@@ -8,12 +8,12 @@ module.exports = {
 		main: './src/main.js',
 		vendor: ['jquery',
 			'bootstrap',
-			'bootstrap/dist/css/bootstrap.css',
 			//'./css/2-col-portfolio.css',
 			//'./css/font-awesome.min.css',
 			//'./js/googlemap.js',
 			//'./js/markerclusterer.js'
 		],
+		//css:['bootstrap/dist/css/bootstrap.css'] //ETP css要import在js裡面才不會報錯
 		/* <script src="vendor.js"></script>�������o�˧Y�i�פJ*/
 	},
 	output: {
@@ -24,7 +24,7 @@ module.exports = {
 		loaders: [
 			{ test: /\.vue$/, loader: 'vue' },
 			{ test: /\.js[x]?$/, exclude: /node_modules/, loader: 'babel' },
-			{ test: /\.css$/, loader: ETP.extract({fallbackLoader:"style-loader", loader:"css-loader"}) },
+			{ test: /\.css$/, loader: ETP.extract("style-loader","css-loader") },
 			{ test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: "file" },
 			{ test: /\.(woff|woff2)$/, loader: "url?prefix=font/&limit=5000" },
 			{ test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: "url?limit=10000&mimetype=application/octet-stream" },
@@ -50,7 +50,7 @@ module.exports = {
 	},
 	devServer: { inline:true, hot:true},
 	plugins: [
-		new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'vendor.js'),
+		//new webpack.optimize.CommonsChunkPlugin(/* chunkName= */'vendor', /* filename= */'vendor.js'),
 		new webpack.ProvidePlugin({
 			$: 'jquery',
 			jQuery: 'jquery',

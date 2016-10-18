@@ -5,7 +5,8 @@
 
 	<!-- google map -->
 	<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd8CIfC7a5QepYroYyRMwYxPSRx1sd9yA"></script>-->
-	<script src="src/vendor.js"></script>
+	<link rel="stylesheet" type="text/css" href="src/bundle.css">
+	<script src="src/vendor.min.js"></script>
 	<script src="src/main.min.js"></script>
 </head> 
 
@@ -24,7 +25,8 @@
 			<router-view name="a"></router-view>
 		</transition>
 		
-        routeVue end{{count}}<br><br>
+        <div class="red">routeVue end{{count}}</div>
+		<br><br>
 		<div class="container">
 			<!--<header-app :msg="a"></header-app>-->
 			<div class="row">
